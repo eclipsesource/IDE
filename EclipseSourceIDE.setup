@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pde="http://www.eclipse.org/oomph/setup/pde/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore"
+    name="eclipsesource.ide"
+    label="EclipseSource IDE">
+  <stream name="master">
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          name="com.mountainminds.eclemma.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.e4.core.tools.feature.feature.group"/>
+      <requirement
+          name="net.sf.eclipsecs.feature.group"/>
+      <requirement
+          name="org.eclipse.rap.tools.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.pde.api.tools.ee.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.wst.web_ui.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.ecp.ecoreeditor.feature.feature.group"/>
+      <repository
+          url="http://update.eclemma.org/"/>
+      <repository
+          url="http://download.eclipse.org/e4/downloads/drops/S-0.17-201501051100/repository/"/>
+      <repository
+          url="http://eclipse-cs.sf.net/update"/>
+      <repository
+          url="http://download.eclipse.org/rt/rap/tools/2.3"/>
+      <repository
+          url="http://ecoreeditor.clemens-elflein.de/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="pde:TargetPlatformTask"
+        id=""
+        name=""/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="preferences">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/lineNumberRuler"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/refresh.enabled"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.typefilter.enabled"
+          value="java.awt.*;"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/encoding"
+          value="UTF-8"/>
+    </setupTask>
+  </stream>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>EclipseSource IDE</description>
+</setup:Project>
