@@ -9,6 +9,11 @@
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore"
     name="eclipsesource.ide"
     label="EclipseSource IDE">
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Xmx"
+      value="2048m"
+      vm="true"/>
   <stream name="master">
     <setupTask
         xsi:type="setup.p2:P2Task">
